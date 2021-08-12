@@ -21,7 +21,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //Rotas
 app.get('/', (req, res) => {
-  res.render('index');
+  Pergunta.findAll({ raw: true }).then((perguntas) => {
+    //pesquisando os dados no banco
+    res.render('index', {
+      perguntas: perguntas,
+    });
+  });
 });
 app.get('/perguntar', (req, res) => {
   res.render('perguntar');
