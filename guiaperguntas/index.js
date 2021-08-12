@@ -1,6 +1,16 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const connection = require('./database/database');
+//Database connection
+connection
+  .authenticate()
+  .then(() => {
+    console.log('Conexão feita com o banco de dados!');
+  })
+  .catch((msgErro) => {
+    console.log('Conexão falhou!', msgErro);
+  });
 
 // estou dizendo para o express usar o ejs  como view engine
 app.set('view engine', 'ejs');
