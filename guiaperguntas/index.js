@@ -21,7 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //Rotas
 app.get('/', (req, res) => {
-  Pergunta.findAll({ raw: true }).then((perguntas) => {
+  Pergunta.findAll({
+    raw: true,
+    order: [
+      // -> mesma coisa que o order by
+      ['id', 'DESC'], // ASC = cresacente \\ DES = decrescente
+    ],
+  }).then((perguntas) => {
     //pesquisando os dados no banco
     res.render('index', {
       perguntas: perguntas,
