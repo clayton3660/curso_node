@@ -17,9 +17,11 @@ connection
 // estou dizendo para o express usar o ejs  como view engine
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
 // configuração do bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 //Rotas
 app.get('/', (req, res) => {
   Pergunta.findAll({
