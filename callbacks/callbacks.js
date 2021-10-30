@@ -2,19 +2,23 @@ function enviarEmail(corpo, para) {
   return new Promise((resolve, reject) => {
     setTimeout(() =>{
 
-      var deuErro = true;
+      var deuErro = false;
       //console.log('Email enviado')
       if(!deuErro) {
-        resolve();
+        resolve({time: 6, to: "email@email.com"});
       }else {
-        reject()
+        reject("Fila cheia")
       }
-
     }, 4000)
   })
 }
-enviarEmail("Olá mundo", 'email@email.com').then(() =>{
-  console.log('Opa, voce consegui fazer o que me prometeu!')
-}).catch(() =>{
-  console.log('Que pena, não deu! :(')
+enviarEmail("Olá mundo", 'email@email.com').then(({time, to}) =>{
+  console.log(`
+    Time: ${time}
+    ___________________
+    To: ${to}
+  `)
+
+}).catch((erro) =>{
+  console.log('Que pena, não deu! :(' + erro)
 })
