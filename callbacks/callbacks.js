@@ -6,7 +6,7 @@ function pegarId() {
   });
 }
 
-function  buscarEmailNoBanco(id) {
+function buscarEmailNoBanco(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('email@email.com');
@@ -27,12 +27,34 @@ function enviarEmail(corpo, para) {
     }, 4000);
   });
 }
-pegarId().then ((id) => {
-  buscarEmailNoBanco(id).then((email) => {
-    enviarEmail('Olá, como vai?!', email ).then(() => {
-      console.log("Email enviado, para o usuário com id: " + id)
-    }).catch((err) => {
-      console.log(err)
-    })
-  })
-})
+
+function pegarUsuarios() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        { name: 'clayton', lang: 'JS' },
+        { name: 'paiva', lang: 'C#' },
+        { name: 'silva', lang: 'Java' },
+      ]);
+    }, 3000);
+  });
+}
+
+
+async function principal(){
+  var usuarios = await pegarUsuarios();
+  console.log(usuarios)
+}
+
+principal();
+
+
+// pegarId().then ((id) => {
+//   buscarEmailNoBanco(id).then((email) => {
+//     enviarEmail('Olá, como vai?!', email ).then(() => {
+//       console.log("Email enviado, para o usuário com id: " + id)
+//     }).catch((err) => {
+//       console.log(err)
+//     })
+//   })
+// })
