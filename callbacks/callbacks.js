@@ -40,14 +40,19 @@ function pegarUsuarios() {
   });
 }
 
-
-async function principal(){
-  var usuarios = await pegarUsuarios();
-  console.log(usuarios)
+async function principal() {
+  var id = await pegarId();
+  var email = await buscarEmailNoBanco(id);
+  enviarEmail('Olá, como vai?', email)
+    .then(() => {
+      console.log('Email enviado!');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 principal();
-
 
 // pegarId().then ((id) => {
 //   buscarEmailNoBanco(id).then((email) => {
