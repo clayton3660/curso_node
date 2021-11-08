@@ -26,5 +26,16 @@ class Filme{
 }
 
 var vingadores = new Filme();
+
+console.log("Titulo do filme: " + vingadores.titulo)
+console.log("Ano de lançamento: " + vingadores.ano)
+
 var hulk = new Filme();
+
+console.log("Titulo do filme: " + hulk.titulo)
+console.log("Ano de lançamento: " + hulk.ano)
+
 var starWars = new Filme();
+
+console.log("Titulo do filme: " + starWars.titulo)
+console.log("Ano de lançamento: " + starWars.ano)
