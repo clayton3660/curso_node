@@ -43,13 +43,12 @@ function pegarUsuarios() {
 async function principal() {
   var id = await pegarId();
   var email = await buscarEmailNoBanco(id);
-  enviarEmail('Olá, como vai?', email)
-    .then(() => {
-      console.log('Email enviado!');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  try {
+    await enviarEmail('Olá, como vai?', email);
+    console.log("Email enviado com sucesso!")
+  }catch (erro) {
+    console.log(erro)
+  }
 }
 
 principal();
@@ -63,3 +62,6 @@ principal();
 //     })
 //   })
 // })
+
+
+
