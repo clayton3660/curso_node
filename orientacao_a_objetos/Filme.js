@@ -27,15 +27,18 @@ class Filme{
 
 var vingadores = new Filme();
 
+vingadores.titulo = 'Vingadores 2'
+vingadores.ano = '2014'
+vingadores.genero = 'Ação'
+
 console.log("Titulo do filme: " + vingadores.titulo)
 console.log("Ano de lançamento: " + vingadores.ano)
 
-var hulk = new Filme();
+var batman = new Filme();
 
-console.log("Titulo do filme: " + hulk.titulo)
-console.log("Ano de lançamento: " + hulk.ano)
+batman.titulo = "batman"
+batman.ano = "2009"
+batman.genero = "Ação"
 
-var starWars = new Filme();
-
-console.log("Titulo do filme: " + starWars.titulo)
-console.log("Ano de lançamento: " + starWars.ano)
+console.log(batman.titulo)
+console.log(batman.genero)
