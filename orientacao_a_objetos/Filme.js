@@ -1,44 +1,42 @@
-class Filme{
-  cosntructor(){
-    this.titulo = '';
-    this.ano = 0;
-    this.genero = '';
-    this.diretor = '';
+class Filme {
+  constructor(titulo, ano, genero, diretor, duracao) {
+    this.titulo = titulo;
+    this.ano = ano;
+    this.genero = genero;
+    this.diretor = diretor;
+    this.duracao = duracao;
     this.atores = [];
-    this.duracao = 0;
   }
 
-  Reproduzir(){
-    console.log("Reproduzindo....");
+  Reproduzir() {
+    console.log('Reproduzindo....');
   }
 
-  Pausar(){
+  Pausar() {
     console.log('Pausado || ');
   }
 
-  Avançar(){
+  Avançar() {
     console.log('Avançar >> ');
   }
 
-  Fechar(){
+  Fechar() {
     console.log('Fechar X');
   }
 }
 
-var vingadores = new Filme();
+var vingadores = new Filme('Vingadores 2',2014,"Ação","Alguem","2h");
 
-vingadores.titulo = 'Vingadores 2'
-vingadores.ano = '2014'
-vingadores.genero = 'Ação'
 
-console.log("Titulo do filme: " + vingadores.titulo)
-console.log("Ano de lançamento: " + vingadores.ano)
 
-var batman = new Filme();
+console.log('Titulo do filme: ' + vingadores.titulo);
+console.log('Ano de lançamento: ' + vingadores.ano);
 
-batman.titulo = "batman"
-batman.ano = "2009"
-batman.genero = "Ação"
+var batman = new Filme("Batman",2009,"Ação","Alguem 2","2h30");
+
+// batman.titulo = "batman"
+// batman.ano = "2009"
+// batman.genero = "Ação"
 
 console.log(batman.titulo)
 console.log(batman.genero)
